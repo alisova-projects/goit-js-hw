@@ -197,3 +197,253 @@
 // const valueB = "25px";
 // console.log(Number(valueB)); // NaN
 // console.log(typeof Number(valueB)); // 'number'
+
+// ---------------------------------------------------------
+
+/*
+ * Напиши скрипт который подсчитывает сумму всех чётных чисел в массиве.
+ */
+
+// const numbers = [1, 5, 8, 9, 12, 4, 15, 27, 30, 18, 14];
+// let total = 0;
+
+// for (let i = 0; i < numbers.length; i++) {
+//   // тут лучше фор...оф
+//   const number = numbers[i];
+
+//   if (number % 2 === 0) {
+//     console.log("Чётное: ", number);
+
+//     total += number;
+//   }
+// }
+// console.log("Total: ", total);
+
+// или - логика от обратного
+
+// for (const number of numbers) {
+//   if (number % 2 !== 0) {
+//     console.log("Эту итерацию нужно пропустить", number);
+//     continue;
+//   }
+
+//   console.log(`${number} - четное!!!!`);
+//   total += number;
+// }
+
+// console.log("Total: ", total);
+
+// ---------------------------------------------------------
+/*
+ * Напиши скрипт поиска логина
+ * - Если логина нет, вывести сообщение 'Пользователь [логин] не найден.'
+ * - Если нашли логин, вывести сообщение 'Пользователь [логин] найден.'
+ *
+ * - Сначала через for
+ * - Потом через for...of
+ * - Логика break
+ * - Метод includes() с тернарным оператором
+ */
+
+// const logins = ["m4ngoDoge", "k1widab3st", "poly1scute", "aj4xth3m4n"];
+// const loginToFind = "aj4xth3m4n";
+// let message = `Пользователь ${loginToFind} не найден.`;
+
+// for (let i = 0; i < logins.length; i += 1) {
+//   const login = logins[i];
+
+//   console.log('Login: ', login);
+//   console.log(`${login} === ${loginToFind}: `, login === loginToFind);
+
+//   if (login === loginToFind) {
+//     console.log('Ура, равны!!!');
+//     message = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+// }
+
+// console.log(message);
+// ------------------------------------------------------------
+
+// for (const login of logins) {
+//   console.log('Login: ', login);
+//   console.log(`${login} === ${loginToFind}: `, login === loginToFind);
+
+//   if (login === loginToFind) {
+//     console.log('Ура, равны!!!');
+//     message = `Пользователь ${loginToFind} найден.`;
+//     break;
+//   }
+// }
+
+// console.log(message);
+
+// const message = logins.includes(loginToFind)
+//   ? `Пользователь ${loginToFind} найден.`
+//   : `Пользователь ${loginToFind} не найден.`;
+
+// console.log(message);
+
+// --------------------------------------------------------
+
+/*
+ * Напиши скрипт поиска самого маленького числа в массиве,
+ * при условии что числа уникальные (не повторяются).
+ */
+
+// const numbers = [51, 18, 13, 24, 7, 85, 19];
+// let smallestNumber = numbers[0];
+
+// for (const number of numbers) {
+//   //   console.log(number);
+
+//   if (number < smallestNumber) {
+//     smallestNumber = number;
+//   }
+// }
+// console.log(smallestNumber);
+
+// самое большое число
+
+// let biggestNumber = numbers[0];
+
+// for (const number of numbers) {
+//   if (number > biggestNumber) {
+//     biggestNumber = number;
+//   }
+// }
+// console.log(biggestNumber);
+
+// ----------------------------------------------------------
+
+/*
+ * Напиши скрипт, который объединяет все элементы массива в одно строковое значение.
+ * Элементов может быть произвольное кол-во.
+ * Пусть элементы массива  в строке будут разделены запятой.
+ * - Сначала через for
+ * - Потом через join()
+ */
+
+// const friends = ["Mango", "Poly", "Kiwi", "Ajax"];
+// let string = "";
+
+// for (const friend of friends) {
+//   string += friend + ",";
+// }
+
+// Должно получиться 'Mango,Poly,Kiwi,Ajax,' - old school
+
+// string = string.slice(0, string.length - 1); // срезали запятую, но метод не деструктивный
+// Должно получиться 'Mango,Poly,Kiwi,Ajax'
+
+// const string = friends.join(", "); // best practice
+// console.log(friends);
+// console.log(string);
+
+// --------------------------------------------------------------
+
+/*
+ * Напиши скрипт который заменяет регистр каждого символа в строке на противоположный.
+ * Например, если строка «JavaScript», то на выходе должена быть строка «jAVAsCRIPT».
+ */
+
+// const string = "JavaScript";
+// const letters = string.split("");
+// let invertedString = "";
+
+// for (const letter of letters) {
+//   console.log(letter);
+
+//   if (letter === letter.toLocaleLowerCase()) {
+//     console.log("Эта буква в нижнем регистре!!! - ", letter);
+
+//     invertedString += letter.toUpperCase();
+//   } else {
+//     console.log("Эта буква в верхнет регистре!!! - ", letter);
+//     invertedString += letter.toLocaleLowerCase();
+//   }
+
+//   const isEqual = letter === letter.toLocaleLowerCase();
+//   invertedString += isEqual ? letter.toUpperCase() : letter.toLocaleLowerCase();
+// }
+
+// console.log("invertedString: ", invertedString);
+//  -----------------------------------------------------------
+
+// ---------------------------------------------------------------
+
+/*
+ * Делаем slug в URL из названия статьи (например на dev.to)
+ * Заголовок статьи состоит только из букв и пробелов
+ *
+ * - Нормализируем строку
+ * - Разбиваем по словам
+ * - Сшиваем в строку с разделителями
+ */
+
+// Должно получиться top-10-benefits-of-react-framework
+// const title = "Top 10 benefits of React framework";
+
+// const normalizedTitle = title.toLowerCase();
+// console.log(normalizedTitle);
+
+// const words = normalizedTitle.split(' ');
+// console.log(words);
+
+// const slug = words.join('-');
+// console.log(slug);
+
+// const slug1 = title.toLowerCase().split(" ").join("-");
+
+// console.log(slug1);
+
+// ------------------------------------------------------------
+
+/*
+ * Работем с коллекцией карточек в trello
+ * - Метод splice()
+ * - Удалить
+ * - Добавить
+ * - Обновить
+ */
+
+// const cards = [
+//   "Карточка-1",
+//   "Карточка-2",
+//   "Карточка-3",
+//   "Карточка-4",
+//   "Карточка-5",
+// ];
+
+// console.table(cards);
+
+/*
+ * Удаление (по индексу), метод indexOf()
+ */
+
+// const cardToRemove = "Карточка-3";
+// const index = cards.indexOf(cardToRemove);
+
+// cards.splice(index, 1);
+// console.log(index);
+
+/*
+ * Добавление (по индексу)
+ */
+// const cardToInsert = "Карточка-6";
+// const index = 3;
+
+// cards.splice(index, 0, cardToInsert);
+
+// console.log(cards);
+
+/*
+ * Обновление (по индексу)
+ */
+// const cardToUpdate = "Карточка-4";
+// const index = cards.indexOf(cardToUpdate);
+
+// console.log(index);
+
+// cards.splice(index, 1, "Обновленная карточка-4");
+// console.log(cards);

@@ -52,8 +52,89 @@
       }
     </style>
 
+    <!-- для 8 модуля -->
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        outline: 2px solid tomato;
+      }
+
+      button {
+        margin: 4px;
+      }
+    </style>
+
+    <style>
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 8px;
+        background-color: #fff;
+        list-style: none;
+        user-select: none;
+        outline: 1px solid tomato;
+      }
+
+      .tags__item {
+        margin: 4px;
+      }
+
+      .tags__btn {
+        border: 1px solid #212121;
+        border-radius: 4px;
+        display: inline-block;
+        padding: 4px 10px 4px;
+
+        font-size: 24px;
+        font-family: inherit;
+        color: #212121;
+        font-weight: 500;
+        text-align: center;
+        white-space: nowrap;
+        text-decoration: none;
+        outline: none;
+
+        background-color: #fff;
+        cursor: pointer;
+      }
+
+      .tags__btn--active {
+        color: #fff;
+        background-color: #3f51b5;
+      }
+    </style>
+
+    <style>
+      .feed {
+        list-style: none;
+      }
+
+      .feed li:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      .feed img {
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 500ms linear 500ms;
+        width: 640px;
+        height: 480px;
+        object-fit: cover;
+      }
+
+      .feed img.appear {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    </style>
+
     <link rel="stylesheet" href="./scc/styles.css" />
     <link rel="stylesheet" href="./scc/modal.css" />
+    <link rel="stylesheet" href="./scc/colorpicker.css" />
   </head>
   <body>
     <!-- <div class="counter">
@@ -171,13 +252,13 @@
     <!-- <button class="js-clear">Очистить</button>
     <p class="output js-output"></p> -->
 
-    <div class="box js-box">
+    <!-- <div class="box js-box">
       <div class="inner-box"></div>
-    </div>
+    </div> -->
 
     <!-- -------------------------------------------------------- -->
 
-    <button class="button" data-action="open-modal">Открыть модалку</button>
+    <!-- <button class="button" data-action="open-modal">Открыть модалку</button>
 
     <div class="backdrop js-backdrop">
       <div class="modal">
@@ -196,7 +277,330 @@
           Закрыть
         </button>
       </div>
-    </div>
+    </div> -->
+
+    <!-- для 8 модуля -->
+    <!-- <button class="js-add-btn">Добавить кнопку</button>
+    <hr />
+
+    <div class="container js-container">
+      <button type="button">Кнопка 1</button>
+      <button type="button">Кнопка 2</button>
+      <button type="button">Кнопка 3</button>
+      <button type="button">Кнопка 4</button>
+      <button type="button">Кнопка 5</button>
+    </div> -->
+
+    <!-- <ul class="tags js-tags">
+      <li class="tags__item">
+        <button class="tags__btn" data-value="html">#html</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="css">#css</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="javascript">#javascript</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="npm">#npm</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="webpack">#webpack</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="react">#react</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="redux">#redux</button>
+      </li>
+      <li class="tags__item">
+        <button class="tags__btn" data-value="nodejs">#nodejs</button>
+      </li>
+    </ul> -->
+
+    <!-- <div class="palette js-palette"></div> -->
+
+    <!-- Событие mousemove (модуль 9)-->
+    <!-- <p class="js-coords">Кол-во вызовов onMouseMove: 0</p> -->
+
+    <!-- <hr /> -->
+    <!-- Событие input -->
+    <!-- <input type="text" class="js-input" />
+    <p class="js-output">Кол-во вызовов onInputChange: 0</p> -->
+
+    <!-- <label>
+      Что ищем?
+      <input type="text" id="filter" />
+    </label>
+
+    <ul class="js-list"></ul> -->
+
+    <ul class="feed">
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/avocado-cooked-delicious-dish-262959.jpg"
+          alt="avocado-cooked-delicious-dish"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/black-frying-pan-with-spaghetti-sauce-near-brown-wooden-691114.jpg"
+          alt="black-frying-pan-with-spaghetti-sauce-near-brown-wooden"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/blueberries-cake-chocolate-chocolate-cake-291528.jpg"
+          alt="blueberries-cake-chocolate-chocolate-cake"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/blur-breakfast-close-up-dairy-product-376464.jpg"
+          alt="blur-breakfast-close-up-dairy-product"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/flat-lay-photography-of-vegetable-salad-on-plate-1640777.jpg"
+          alt="flat-lay-photography-of-vegetable-salad-on-plate"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/food-dinner-lunch-unhealthy-70497.jpg"
+          alt="food-dinner-lunch-unhealthy"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/food-plate-chocolate-dessert-132694.jpg"
+          alt="food-plate-chocolate-dessert"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/selective-focus-photography-of-beef-steak-with-sauce-675951.jpg"
+          alt="beef-steak-with-sauce"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/selective-focus-photography-of-pasta-with-tomato-and-basil-1279330.jpg"
+          alt="pasta-with-tomato-and-basil"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/sliced-vegetable-and-cooked-food-on-white-ceramic-plate-1234535.jpg"
+          alt="sliced-vegetable-and-cooked-food-on-white-ceramic-plate"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/steak-food-769289.jpg"
+          alt="steak-food"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+      <li class="feed__item">
+        <img
+          loading="lazy"
+          src="./data/images/top-view-photo-of-food-dessert-1099680.jpg"
+          alt="top-view-photo-of-food-dessert"
+          width="640"
+          height="480"
+        />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit minus
+          soluta sed ea rem, debitis nulla ratione eos quia exercitationem
+          perspiciatis! Nam tenetur doloremque libero, fuga aperiam delectus
+          fugit dolor deserunt, rerum aliquid animi error nobis quae mollitia
+          tempore ab eos? Pariatur enim saepe nostrum aspernatur ea quam labore
+          dolores, excepturi ex necessitatibus aliquam numquam, illum harum
+          minima eveniet atque sit. Optio, consequatur. Nam facere culpa tenetur
+          laudantium eaque nesciunt repellat alias iure. Maxime quos consectetur
+          quas cum doloremque maiores recusandae, assumenda similique cumque in.
+          Consequuntur corrupti vero atque, nam facilis blanditiis saepe
+          similique, quisquam doloribus asperiores officiis ab distinctio.
+        </p>
+      </li>
+    </ul>
 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
 
@@ -212,7 +616,9 @@
     <!-- <script src="/module-5-prototypeAndClass.js" type="module"></script> -->
     <!-- <script src="/module-6-arrayMethods.js" type="module"></script> -->
     <!-- <script src="/module-7-dom.js" type="module"></script> -->
-    <script src="/module-7-events.js" type="module"></script>
+    <!-- <script src="/module-7-events.js" type="module"></script> -->
+    <!-- <script src="/module-8-deligation.js" type="module"></script> -->
+    <script src="/module-9.js" type="module"></script>
 
     <!-- <script src="/hw-1.js" type="module"></script> -->
     <!-- <script src="/hw-2.js" type="module"></script> -->

@@ -104,6 +104,7 @@
  * Ленивая загрузка изображений (концепция) - изображение будет загружать тогда, когда необходимо (за некоторое время до того, как пользователь её увидит)
  * - нативная поддержка - lazy loading
  * - событие загрузки изображения - 'load'
+ * - объект настроек { once: true } - выполнить функцию 1 раз и удалить вызов
  */
 
 /*
@@ -111,7 +112,47 @@
  Если адаптивные, то будут src-сеты и дескриптор 'w' (браузер тоже будет знать, сколько кратинка будет занимать).
  */
 
-const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+// const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+// lazyImages.forEach((image) => {
+//   image.addEventListener("load", onImageLoaded, { once: true });
+// });
+
+// function onImageLoaded(evt) {
+//   console.log("Картинка загрузилась");
+//   evt.target.classList.add("appear");
+// }
+
+// ***********************************************************************
+// vanilla js
+// ****************************************************
+
+/*
+ * Библиотека lazysizes
+ (библиотека - это абстрация - готовое решение, которое на за что-то там реализовало)
+ * - feature detection - выявление возможностей браузера
+ */
+
+/*
+ cdn - система доставки контента. куча серверов по всему миру, где лежат файлы.
+ 
+ библиотека - это н енативное решение, это чей-то код, который нужно для себя настроить/подключить по инструкции, но есть гарантия того, что она работает везде.
+ 
+ модный паттерн LQIP в этой биб-ке - low quality image placeholder - плейсхолдер картинки низкого качества.
+
+ feacher detection - определение функционала браузера: если браузер поддерживает нативно лейзизагрузку изображения, нам не нужно подключать либу, нам нужно разрешить делать всё это самому. а если не поддерживает - то надо подлючать лабу.
+ почитать: web.dev/native-lazy-loading/
+ */
+
+if ("loading" in HTMLImageElement.prototype) {
+  console.log("Браузер поддерживает lazyload");
+  addSrcAttrToLazyImages();
+} else {
+  console.log("Браузер НЕ поддерживает lazyload");
+  addLazySizesScript();
+}
+
+const lazyImages = document.querySelectorAll("img[data-src]");
 
 lazyImages.forEach((image) => {
   image.addEventListener("load", onImageLoaded, { once: true });
@@ -122,4 +163,21 @@ function onImageLoaded(evt) {
   evt.target.classList.add("appear");
 }
 
-// ***********************************************************************
+function addLazySizesScript() {
+  const script = document.createElement("script");
+  script.src =
+    "https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js";
+  script.integrity =
+    "sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==";
+  script.crossOrigin = "anonymous";
+
+  document.body.appendChild(script);
+}
+
+function addSrcAttrToLazyImages() {
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+
+  lazyImages.forEach((img) => {
+    img.src = img.dataset.src;
+  });
+}
